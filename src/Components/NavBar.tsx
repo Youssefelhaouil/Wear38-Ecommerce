@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <>
-      <header className="container  flex justify-between items-center h-[80px]   ">
+      <header className="px-8 md:px-16 lg:px-[80px] xl:px-[110px]  flex justify-between items-center h-[80px]   ">
         <div className="w-[50%] flex justify-between items-center ">
-          <h1 className="flex items-center gap-1 text-2xl font-medium text-gray-700 cursor-pointer">
+          <Link to={"/"} className="flex items-center gap-1 text-2xl font-medium text-gray-700 cursor-pointer">
             WEAR <span className="text-gray-500 font-bold ">38</span>
-          </h1>
-          <div>
+          </Link>
+          <div className="hidden lg:flex">
             <ul className="flex gap-10">
                 <Link to="/"><Li>Home</Li></Link>
                 <Link to="/products"><Li>Collections</Li></Link>
@@ -20,7 +20,7 @@ function NavBar() {
             </ul>
           </div>
         </div>
-        <div className="w-[30%] flex justify-end items-center space-x-2 text-xl ">
+        <div className="hidden lg:flex w-[30%]  justify-end items-center space-x-2 text-xl ">
             <FaUserCircle className="hover:text-gray-600 cursor-pointer"/>
             <FaShoppingCart className="hover:text-gray-600 cursor-pointer"/>
         </div>

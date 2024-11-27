@@ -10,7 +10,7 @@ function Button({ width = "w-fit", className, children, ...rest }: IProps) {
   return (
     <>
       <button
-        className={`${width} ${className} px-3 py-2 rounded-md text-white`}
+        className={`${width} ${className} px-3 py-2  text-white`}
         {...rest}
       >
         {children}

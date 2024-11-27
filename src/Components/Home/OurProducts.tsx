@@ -1,16 +1,11 @@
-import useFetch from "../../hooks/UseFetch";
 import ProductCard from "../ProductCard";
 import { IProduct } from "../../interfaces";
+import { useFetchContext } from "../../hooks/useFetchContext";
 
-interface IProps {}
-
-function OurProducts({}: IProps) {
-  const { isLoading, data } = useFetch({
-    queryKey: ["ProductData"],
-    url: "",
-  });
-  const feature = data?.filter((dt: IProduct) => dt.feature === true);
-  console.log(feature);
+function OurProducts() {
+  
+  const { data, isLoading } = useFetchContext();
+  const feature = data?.filter((dt) => dt.feature === true);
 
   return (
     <>
@@ -24,19 +19,14 @@ function OurProducts({}: IProps) {
         <div className="mt-4 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
           {feature ? (
             feature.map((product: IProduct, idx: number) => (
-              <div>
-                <ProductCard
-                  key={idx}
-                  product={product}
-                  isLoading={isLoading}
-                />
+              <div key={idx}>
+                <ProductCard product={product} isLoading={isLoading} />
               </div>
             ))
           ) : (
             <h1>Loading ...</h1>
           )}
         </div>
-        
       </div>
     </>
   );

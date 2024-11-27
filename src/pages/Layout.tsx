@@ -1,18 +1,18 @@
-import { Outlet } from "react-router-dom"
-import NavBar from "../Components/NavBar"
-import Footer from "../Components/Footer"
+import { Outlet, ScrollRestoration } from "react-router-dom";
+import NavBar from "../Components/NavBar";
+import Footer from "../Components/Footer";
 
 function Layout() {
   return (
     <>
-    <div>
+      <div>
         <NavBar />
+        <ScrollRestoration />
         <Outlet />
         <Footer />
-    </div>
-
+      </div>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

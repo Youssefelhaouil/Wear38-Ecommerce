@@ -5,7 +5,7 @@ export interface ICategory {
   icon: ReactElement;
 }
 export interface IProduct {
-  id: string;
+  id: number;
   title: string;
   img: string;
   category: string;
