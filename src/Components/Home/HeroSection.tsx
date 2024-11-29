@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function HeroSection() {
   return (
     <>
-      <div className="bg-[#e0dfdf] h-auto lg:h-[calc(100vh-140px)] w-full px-[40px] lg:px-[80px] xl:pl-[120px] py-10 flex flex-col-reverse lg:flex-row items-center ">
+      <div className="bg-[#e0dfdf] h-auto lg:h-[calc(100vh-140px)] min-w-xl px-[40px] lg:px-[80px] xl:pl-[120px] py-10 flex flex-col-reverse lg:flex-row items-center ">
         <div className="flex justify-between ">
           <div className="flex flex-col items-center lg:items-start space-y-5 ">
             <div className="flex flex-col  space-y-3">

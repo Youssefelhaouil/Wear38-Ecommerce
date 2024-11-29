@@ -13,7 +13,7 @@ function ProductCard({ isLoading, product }: IProps) {
     <>
       {!isLoading ? (
         <Link to={`/products/${product.id}`}>
-          <div className="relative grid grid-rows-1 h-[330px] border-2 rounded-md p-3  space-y-1 shadow-sm cursor-pointer hover:shadow-md">
+          <div className="relative grid grid-rows-1 h-[350px] border-2 rounded-md p-3  space-y-1 shadow-sm cursor-pointer hover:shadow-md">
             <div className="flex flex-col">
               <Image
                 url={product.img}
