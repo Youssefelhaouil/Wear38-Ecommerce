@@ -13,7 +13,7 @@ export default {
       container: {
         center:true,
         padding: {
-          DEFAULT: '4rem',
+          DEFAULT: '3rem',
           sm: '2rem',
           lg: '4rem',
           xl: '5rem',

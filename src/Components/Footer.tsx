@@ -6,7 +6,7 @@ interface IProps {}
 function Footer({}: IProps) {
   return (
     <>
-      <div className=" bg-light-gray  ">
+      <div className=" bg-light-gray mt-[270px] lg:mt-[40px]   ">
         <div className="container max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2   mx-auto">
           <div className="p-5">
             <h3 className="font-bold text-xl text-gray-500">WEAR 38</h3>

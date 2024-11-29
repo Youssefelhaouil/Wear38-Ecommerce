@@ -1,6 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import Button from "../Ui/Button";
 import HeroImg from "./HeroImg";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
@@ -9,7 +10,7 @@ function HeroSection() {
         <div className="flex justify-between ">
           <div className="flex flex-col items-center lg:items-start space-y-5 ">
             <div className="flex flex-col  space-y-3">
-              <h1 className="font-semibold text-2xl text-center lg:text-start text-black/80 ">
+              <h1 className="font-semibold text-2xl text-center lg:text-start lg:text-4xl text-black/80 ">
                 Wear the Boldness of You
               </h1>
               <p className="text-base tracking-widest text-pretty text-center text-black text-opacity-70  lg:text-start">
@@ -18,9 +19,11 @@ function HeroSection() {
                 story.
               </p>
             </div>
-            <Button className="flex gap-x-2 items-center  bg-[#242323] hover:bg-[#707070] ">
-              Our Collections <FaArrowRight />
-            </Button>
+            <Link to={"/products"}>
+              <Button className="flex gap-x-2 items-center  bg-[#242323] hover:bg-[#707070] ">
+                Our Collections <FaArrowRight />
+              </Button>
+            </Link>
           </div>
         </div>
         <HeroImg />

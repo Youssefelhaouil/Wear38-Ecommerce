@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Ui/Button";
 
 function Cover() {
@@ -8,14 +9,17 @@ function Cover() {
           Enhance Your Everyday Style
         </h1>
         <p className="text-pretty text-sm lg:text-base text-light-gray/65 text-center">
-        Upgrade your wardrobe with Wear 38. Our designs bring comfort and confidence
+          Upgrade your wardrobe with Wear 38. Our designs bring comfort and
+          confidence
         </p>
-        <Button
-          width="w-fit"
-          className="border-2 border-light-gray hover:bg-light-gray/50 text-dark-gray mx-auto mt-10"
-        >
-          View All Products
-        </Button>
+        <Link to={"/products"}>
+          <Button
+            width="w-fit"
+            className="border-2 border-light-gray hover:bg-light-gray/50 text-dark-gray mx-auto mt-10"
+          >
+            View All Products
+          </Button>
+        </Link>
       </div>
     </>
   );

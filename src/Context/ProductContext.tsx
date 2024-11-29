@@ -6,7 +6,9 @@ interface IFetchContext {
     isLoading: boolean;
     data: IProduct[] |null; 
     url: string;
-    setUrl: React.Dispatch<React.SetStateAction<string>>;
+    category:string,
+    setUrl: React.Dispatch<React.SetStateAction<string>>,
+    setCategory:React.Dispatch<React.SetStateAction<string>>
   }
   
   interface IFetchProviderProps {
@@ -16,6 +18,8 @@ export const FetchContext = createContext<IFetchContext |undefined>(undefined);
 
 export const FetchProvider = ({ children } :IFetchProviderProps ) => {
   const [url, setUrl] = useState("");
+  const [category, setCategory] = useState<string>("all");
+
 
   const { isLoading, data } = useFetch({
     queryKey: ["ProductData", url], 
@@ -23,7 +27,7 @@ export const FetchProvider = ({ children } :IFetchProviderProps ) => {
   });
 
   return (
-    <FetchContext.Provider value={{ isLoading, data, url, setUrl }}>
+    <FetchContext.Provider value={{ isLoading, data, url, setUrl,setCategory,category }}>
       {children}
     </FetchContext.Provider>
   );

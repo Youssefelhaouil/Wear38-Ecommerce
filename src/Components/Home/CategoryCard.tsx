@@ -1,12 +1,25 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ICategory } from "../../interfaces";
 import { IoIosArrowDropright } from "react-icons/io";
+import { useFetchContext } from "../../hooks/useFetchContext";
 
 interface IProps {
     products:ICategory,
 }
 
 function CategoryCard({products}: IProps) {
+  const {data,setCategory}=useFetchContext()
+  const navigate=useNavigate()
+  
+  const handleCategory=()=>{
+    if(!data){
+      setCategory("All")
+    }else{
+      setCategory(products.title.toLowerCase())
+    }
+    navigate("/products")
+
+  }
   return (
     <>
     
@@ -17,7 +30,7 @@ function CategoryCard({products}: IProps) {
           </div>
           <h1 className="text-2xl text-dark-gray">{products.title.toUpperCase()}</h1>
         </div>
-        <Link to={"/products"} className="  hover:text-gray-400 text-2xl"><IoIosArrowDropright /></Link>
+        <span  onClick={handleCategory} className="  hover:text-gray-400 text-2xl"><IoIosArrowDropright /></span>
       </div>
     </>
   );

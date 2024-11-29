@@ -6,7 +6,7 @@ interface IProps extends LiHTMLAttributes<HTMLLIElement>{
 }
 
 function Li({children,className ,...rest}: IProps) {
-  return <li className={`${className} flex space-x-1  font-medium text-base cursor-pointer hover:text-gray-600`} {...rest}>{children}</li>;
+  return <li className={`${className} flex space-x-1 text-dark-gray/50  font-medium text-base cursor-pointer hover:text-gray-600`} {...rest}>{children}</li>;
 }
 
 export default Li;
